@@ -1,0 +1,12 @@
+<div class="container">
+  <%= link_to "Back", user_path(current_user), role: "button", class: "btn btn-primary btn-sm" %>
+  <br>
+  <br>
+
+  <h2>Viewing all <%= @user.name %>'s Reservations</h2>
+  <ul class="list-group">
+    <% @reservations.each do |reservation| %>
+      <li class="list-group-item"><%= link_to reservation.spin_class, user_reservation_path(reservation, user_id: @user) %></li>
+    <% end %>
+  </ul>
+</div>
