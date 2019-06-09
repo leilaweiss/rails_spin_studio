@@ -1,0 +1,17 @@
+<div class="container">
+  <% if @user.present? %>
+    <div class="col">
+      <h2>Viewing <%= @user&.name %>'s account</h2>
+    </div>
+  <% else %>
+    <div class="alert alert-danger">
+      <p>You don't have access to this user.</p>
+    </div>
+  <% end %>
+  <div class="col">
+    <%= link_to "View all Spin Classes", spin_classes_path %>
+  </div>
+  <div class="col">
+    <%= link_to "View my classes", user_spin_classes_path(current_user) %>
+  </div>
+</div>
