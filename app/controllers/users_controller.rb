@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authorize, only: :show
+  before_action :authorize, only: [:show, :index]
+
+  def index; end
 
   def new
     @user = User.new
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user), notice: "Account created successfully!"
     else
       flash.now[:alert] = "Could not create account. " \
-      "Please make sure you are using a valid email."
+      "Try again."
       render :new
     end
   end
@@ -27,8 +29,7 @@ private
     params.require(:user).permit(
       :name,
       :email,
-      :password,
-      :password_confirmation
+      :password_digest,
     )
   end
 end
