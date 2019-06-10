@@ -29,7 +29,7 @@ private
     params.require(:user).permit(
       :name,
       :email,
-      :password_digest,
+      :password
     )
   end
 end

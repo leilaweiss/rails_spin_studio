@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   post "/signin", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :users, only: [:index, :create, :show] do
-    resources :reservations
+  resources :users, only: [:index, :create, :show]
 
+  resources :spin_classes, only: [:index, :new, :create] do
+    resources :reservations, only: [:index, :new, :create]
   end
-  resources :spin_classes
   resources :studios
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-   protect_from_forgery with: :exception
+  protect_from_forgery with: :exception
   helper_method :current_user, :authorize
 
   def current_user
@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    return unless logged_in? == false
+    return if logged_in? == true
     redirect_to signin_path, alert: "You must be logged in to view this page."
   end
 end

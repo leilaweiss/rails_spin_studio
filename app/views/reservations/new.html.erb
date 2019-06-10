@@ -1,0 +1,8 @@
+<h2>New Reservation For: <%= @spin_class.name %></h2>
+<%= form_for [@spin_class, @reservation] do |f| %>
+  <div class="form-group">
+    <%= f.label :guests %>
+    <%= f.number_field :guests %>
+  </div>
+  <%= f.submit "Join Class", class: "btn btn-primary btn-sm"%>
+<% end %>
