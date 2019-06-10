@@ -13,14 +13,14 @@ Requirements:
 - [x] Includes at least one has_many through relationship (e.g. Recipe has_many Items through Ingredients)
   (game has_many :players, through: :baskets)
 
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute (e.g. ingredient#quantity)
+- [x] The "through" part of the has_many through includes at least one user submittable attribute (e.g. ingredient#quantity)
   (categories- baskets)
 
-- [ ] Includes reasonable validations for simple model objects
+- [x] Includes reasonable validations for simple model objects
 - [ ] Includes a class level ActiveRecord scope method
 - [x] Includes signup (e.g. Devise)
-- [ ] Includes login (e.g. Devise)
-- [ ] Includes logout (e.g. Devise)
+- [x] Includes login (e.g. Devise)
+- [x] Includes logout (e.g. Devise)
 - [ ] Includes nested resource show or index (e.g. users/2/recipes)
 - [ ] Includes nested resource "new" form (recipes/1/ingredients/new)
 - [x] Includes form display of validation errors
