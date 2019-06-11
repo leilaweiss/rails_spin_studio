@@ -8,6 +8,7 @@ class SpinClassesController < ApplicationController
   end
 
   def show
+    @spin_class = SpinClass.find(params[:id])
   end
 
   def create
