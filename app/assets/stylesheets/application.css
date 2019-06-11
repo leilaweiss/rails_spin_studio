@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: Georgia, serif;
+}
+
+html {
+  height: 200px;
+  background-color: #FFC0CB;
+}
+
+

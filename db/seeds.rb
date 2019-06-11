@@ -1,7 +1,7 @@
 SpinClass.destroy_all
-SpinClass.create(name: "Fusion Class")
-SpinClass.create(name: "Spin/Barre")
-SpinClass.create(name: "70s music mix")
+SpinClass.create(name: "Fusion Class:")
+SpinClass.create(name: "Spin/Barre:")
+SpinClass.create(name: "70s music mix:")
 
 
 # This file should contain all the record creation needed to seed the database with its default values.
