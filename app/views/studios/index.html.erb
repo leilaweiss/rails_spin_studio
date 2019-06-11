@@ -1,3 +1,10 @@
 <h2>Welcome to SpinSpin Studio!</h2>
-<%= link_to 'User Signin', controller: 'users' %></br>
-<%= link_to 'User Signup', new_user_path(@user) %>
+<h4>If previous member please login:</h4>
+
+<div class="container">
+ <%= link_to 'User Login', controller: 'users' %>
+ <br>
+
+<h4>New members please signup below:</h4>
+ <%= link_to 'User Signup', new_user_path(@user) %>
+</div>

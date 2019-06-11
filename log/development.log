@@ -4754,3 +4754,94 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 87ms (Views: 83.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/studios" for ::1 at 2019-06-10 20:52:19 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:52:36 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:52:45 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:53:05 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:53:43 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:55:16 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:55:30 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:55:38 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:56:58 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2019-06-10 20:57:00 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-06-10 20:57:03 -0400
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/signin
+Filter chain halted as :authorize rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-10 20:57:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 43ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-06-10 20:57:08 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
