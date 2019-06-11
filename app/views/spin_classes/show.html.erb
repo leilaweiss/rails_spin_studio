@@ -1,5 +1,8 @@
 <h2>You have joined a class!</h2>
 <h4> <%= @spin_class.name %></h4>
-
-
-
+<h5>List of other attendees</h5>
+<ul>
+<% @spin_class.users.each do |user| %>
+ <li><%= user.name %></li>
+  <% end %>
+</ul>

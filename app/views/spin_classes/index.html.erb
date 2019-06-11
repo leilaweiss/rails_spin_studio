@@ -3,10 +3,16 @@
 <ul class="list-group">
   <% @spin_classes.each do |spin_class| %>
     <li class="list-group-item"><%= spin_class.name %>
-      <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
-      <li>Number of Attendees: <%= spin_class.attendees %>
-
-  </li>
+      <!-- if current user is not part of the given spin class -->
+      <% if Reservation.find_by(user: current_user, spin_class: spin_class).nil? %>
+        <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+      <% else %>
+        You've already joined this spin class!
+      <% end %>
+      <li>
+        Number of Attendees: <%= spin_class.attendees %>
+      </li>
+    </li>
   <% end %>
 </ul>
 <%= link_to "Add New Spin Class", new_spin_class_path %>
