@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'studio/index'
+  get 'studios/index'
 
 
   get "/signup", to: "users#new", as: "new_user"
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "/signin", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  root 'studio#index'
+  root 'studios#index'
 
   resources :users, only: [:index, :create, :show]
 
