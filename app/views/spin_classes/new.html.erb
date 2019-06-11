@@ -2,6 +2,7 @@
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.collection_select :studio_id, Studio.all, :id, :name %>
   </div>
   <%= f.submit "Create Class", class: "btn btn-primary btn-sm"%></br>
   <%= link_to('Back', spin_classes_path) %>

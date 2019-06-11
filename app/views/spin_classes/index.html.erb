@@ -1,7 +1,9 @@
 <h2>All Spin Classes</h2>
 <h4>Click to join a class:</h4>
 <ul class="list-group">
-  <% @spin_classes.each do |spin_class| %>
+  <% @studios.each do |studio| %>
+  <h5>Spin Classes for Studio <%= studio.name %></h5>
+  <% studio.spin_classes.each do |spin_class| %>
     <li class="list-group-item"><%= spin_class.name %>
       <!-- if current user is not part of the given spin class -->
       <% if Reservation.find_by(user: current_user, spin_class: spin_class).nil? %>
@@ -13,6 +15,7 @@
         <h4>Number of Attendees: <%= spin_class.attendees %></h4>
       </li>
     </li>
+    <% end %>
   <% end %>
 </ul>
 <%= link_to "Add New Spin Class", new_spin_class_path %></br>
