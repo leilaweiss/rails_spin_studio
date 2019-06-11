@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :create, :show]
 
-  resources :spin_classes, only: [:index, :new, :create] do
-    resources :reservations, only: [:index, :new, :create]
+  resources :spin_classes, only: [:index, :new, :create, :show] do
+    resources :reservations, only: [:index, :new, :create, :show]
   end
   resources :studios
 

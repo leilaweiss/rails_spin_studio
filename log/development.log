@@ -3679,3 +3679,783 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/signin" for ::1 at 2019-06-10 20:04:37 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-10 20:04:58 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ypvfhY0m+BDDLjU00McRe0K1UEg/OBafBmd6OCPwMzdT4Z/LlVSmpByi+H6IdMojJPTpjXE8ccjBLs9kyHrK8w==", "signin"=>{"email"=>"Leila@leila.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Leila@leila.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 241ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-10 20:04:58 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:05:01 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.4ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 11]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 12]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 41ms (Views: 35.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/spin_classes/11/reservations/new" for ::1 at 2019-06-10 20:05:03 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"11"}
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 42ms (Views: 32.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/spin_classes/11/reservations" for ::1 at 2019-06-10 20:05:06 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0MF4TF068JFZ4s3S3FUcQXc4W84GDJ03CSVv/jWED/VmAhX9e/M6V4dRM4K6RGERfi9qQSYC6TQ+9tKqkA9wMg==", "reservation"=>{"guests"=>"2"}, "commit"=>"Join Class", "spin_class_id"=>"11"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:16
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:22
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "spin_class_id", "created_at", "updated_at", "guests") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 4], ["spin_class_id", 11], ["created_at", "2019-06-11 00:05:06.046447"], ["updated_at", "2019-06-11 00:05:06.046447"], ["guests", 2]]
+  ↳ app/controllers/reservations_controller.rb:22
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reservations_controller.rb:22
+Redirected to http://localhost:3000/spin_classes
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:05:06 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 11]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 12]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:11:51 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (248.0ms)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `studio' for #<#<Class:0x00007fa85313ae68>:0x00007fa854359a90>
+Did you mean?  studio_url):
+     5:     <li class="list-group-item"><%= spin_class.name %></li>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       Number of Attendees: <%= spin_class.attendees %>
+     8:       <%= link_to "Info", studio_path(studio) %>
+     9:   </li>
+    10:   <% end %>
+    11: </ul>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__3656030772532663011_70180472017660'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__3656030772532663011_70180472017660'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:12:02 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 11]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 12]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 57ms (Views: 53.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:12:19 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.4ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 11]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 12]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 63ms (Views: 58.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:12:50 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.3ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 11]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 12]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:14:54 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 11]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 12]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:15:46 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (232.6ms)
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `studio' for #<#<Class:0x00007fa8534d3bd8>:0x00007fa85979d278>
+Did you mean?  studio_url):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", studio_path(studio) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__3656030772532663011_70180516195780'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__3656030772532663011_70180516195780'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:18:24 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__3656030772532663011_70180472733860'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__3656030772532663011_70180472733860'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:19:04 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__3656030772532663011_70180475417740'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__3656030772532663011_70180475417740'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:19:08 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__3656030772532663011_70180476349120'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__3656030772532663011_70180476349120'
+Started GET "/spin_class" for ::1 at 2019-06-10 20:19:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/spin_class"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:19:34 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__3656030772532663011_70180514993720'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__3656030772532663011_70180514993720'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:19:56 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (330.9ms)
+Completed 500 Internal Server Error in 337ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `spin_class_id' for #<#<Class:0x00007fa859551848>:0x00007fa85336bd18>
+Did you mean?  spin_class
+               @spin_classes):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class_id) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__3656030772532663011_70180463676080'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__3656030772532663011_70180463676080'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:23:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (401.0ms)
+Completed 500 Internal Server Error in 419ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `spin_class_id' for #<#<Class:0x00007fe99c2b9ae8>:0x00007fe999418ec8>
+Did you mean?  spin_class
+               @spin_classes):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class_id) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320662107520'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320662107520'
+Started GET "/signin" for ::1 at 2019-06-10 20:23:44 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 210ms (Views: 208.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-10 20:23:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kXUX4EpG3mmWJrSA26kNMvV6Ul2KAuRRN9eJSMij6a4ID1euUjSA3UmqecqDGtZqkzvrmMQGgwbwnjwUIykQag==", "signin"=>{"email"=>"Leila@leila.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Leila@leila.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 245ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-10 20:23:49 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 28ms (Views: 22.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:23:50 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.3ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (408.6ms)
+Completed 500 Internal Server Error in 414ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `spin_class_id' for #<#<Class:0x00007fe99c2b9ae8>:0x00007fe999de6fb8>
+Did you mean?  spin_class
+               @spin_classes):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class_id) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320642827120'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320642827120'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:24:18 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320719940540'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320719940540'
+Started GET "/signin" for ::1 at 2019-06-10 20:24:24 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-10 20:24:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fFTOGLoenoqcB29uWt4pSUJTxZvIleJVrqzMBBdm83rlLo5WomzAPkOLoiQCbfIRJBJ8XoaRhQJp5XlY/OwKvg==", "signin"=>{"email"=>"Leila@leila.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Leila@leila.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 214ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-10 20:24:27 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:24:29 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320726281760'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320726281760'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:25:38 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320654810440'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320654810440'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:25:41 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320725754560'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320725754560'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:27:53 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320719857820'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320719857820'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:29:03 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.3ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (13.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320720276680'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320720276680'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:30:44 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320719416140'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320719416140'
+Started GET "/signin" for ::1 at 2019-06-10 20:30:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-10 20:30:54 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5nBdc6fZLe6e5+qv1RinJj0Z+IHVbru7jjm+rzY4k3Z/Ch09v6tzWkFrJ+WNq3x+W1hBRJtq3OxJcAvz3bJqsg==", "signin"=>{"email"=>"Leila@leila.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Leila@leila.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 216ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-10 20:30:54 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:30:57 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320647202060'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320647202060'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:34:05 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"reservations", :spin_class_id=>#<SpinClass id: 10, name: "Fusion Class", created_at: "2019-06-11 00:01:17", updated_at: "2019-06-11 00:01:17">}, missing required keys: [:id]):
+     5:     <li class="list-group-item"><%= spin_class.name %>
+     6:       <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
+     7:       <li>Number of Attendees: <%= spin_class.attendees %>
+     8:         <%= link_to "Info", spin_class_reservation_path(spin_class) %>
+     9: 
+    10:   </li>
+    11:   <% end %>
+  
+app/views/spin_classes/index.html.erb:8:in `block in _app_views_spin_classes_index_html_erb__1435846006243630934_70320725003740'
+app/views/spin_classes/index.html.erb:4:in `_app_views_spin_classes_index_html_erb__1435846006243630934_70320725003740'
+Started GET "/spin_classes" for ::1 at 2019-06-10 20:35:25 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.3ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 10]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 11]]
+  ↳ app/models/spin_class.rb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 12]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spin_classes/10" for ::1 at 2019-06-10 20:35:32 -0400
+Processing by SpinClassesController#show as HTML
+  Parameters: {"id"=>"10"}
+Completed 406 Not Acceptable in 70ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (SpinClassesController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.3) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.3) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

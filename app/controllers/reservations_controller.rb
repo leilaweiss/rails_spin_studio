@@ -1,14 +1,18 @@
 class ReservationsController < ApplicationController
     before_action :authorize
 
-  # def index
-  #   @user = User.find(current_user.id)
-  #   @reservations = Reservation.user_reservations(current_user)
-  # end
+  def index
+    @user = User.find(current_user.id)
+    @reservations = Reservation.user_reservations(current_user)
+  end
 
   def new
     @spin_class = SpinClass.find(params[:spin_class_id])
     @reservation = Reservation.new
+  end
+
+  def show
+    @reservation = Reservation.find_by(user_id: current_user.id, id: params[:id])
   end
 
 
@@ -31,7 +35,9 @@ private
 
   def reservation_params
     params.require(:reservation).permit(
-      :guests)
+      :guests,
+      :spin_class_id,
+      :user_id)
   end
 end
 
