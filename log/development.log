@@ -9971,3 +9971,1011 @@ Processing by SpinClassesController#index as HTML
 Completed 200 OK in 75ms (Views: 70.8ms | ActiveRecord: 2.1ms)
 
 
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:16:09 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 8], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 8], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 8], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:16:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-11 11:17:22 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:17:26 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-11 11:17:30 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mxiPEGvZrxyGivvKiqqY6p37T+kwmCq/M4Bp7dfq2H53a4Hr6AgH2Ar3rGuEN4Io1hx63EnWrardTpgAdYhedQ==", "signin"=>{"email"=>"Leila@leila.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Leila@leila.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 233ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/4" for ::1 at 2019-06-11 11:17:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:17:34 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-11 11:17:51 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"srh7L+GsCa9sCZLgoGlrUxYEexRxArhl4jrRkqtn0D9ey3XUYn2ha+B0xUGu9HGRXeNOIQhMP3AM9CB/CQVWNA==", "signin"=>{"email"=>"Jeff@jeff.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Jeff@jeff.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 239ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5" for ::1 at 2019-06-11 11:17:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:17:53 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 50ms (Views: 46.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/spin_classes/15/reservations/new" for ::1 at 2019-06-11 11:17:57 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"15"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:17:58 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.3ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.5ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 91ms (Views: 84.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/spin_classes/new" for ::1 at 2019-06-11 11:18:00 -0400
+Processing by SpinClassesController#new as HTML
+  Rendering spin_classes/new.html.erb within layouts/application
+  Rendered spin_classes/new.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 38ms (Views: 33.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:18:01 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.3ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 60ms (Views: 57.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spin_classes/15/reservations/new" for ::1 at 2019-06-11 11:18:21 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"15"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:18:45 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 11:19:02 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2MfKKj3J8QUyhLREB6kd/f/l83FeVJBJFs9bOoCW2IZBvYpkJbuvse0IeQ5fGsalmaRKtBBQ9x7Rhu5maxwhQg=="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:19:02 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2019-06-11 11:19:04 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:19:07 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-11 11:19:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rQlBqHb6FT9mxjrsDWIPrs0pXqbKawkUDiR1RbYR4KlBek9T9Su9++q7bU0D/xVshs5rk7MljgHg6oSoFHNmog==", "signin"=>{"email"=>"Jeff@jeff.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Jeff@jeff.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 224ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/5" for ::1 at 2019-06-11 11:19:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:19:27 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/spin_classes/17/reservations/new" for ::1 at 2019-06-11 11:19:29 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"17"}
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 67ms (Views: 61.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/spin_classes/17/reservations" for ::1 at 2019-06-11 11:19:32 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+fMhNyiLSU+vSK4eYiX+8r1/Fjxuc5DzlP83Kx/pN7HK96VeAhYGOvr2yYAYjh68BvMTbXoQ1crRNn/SqBCGQ==", "reservation"=>{"guests"=>"2"}, "commit"=>"Join Class", "spin_class_id"=>"17"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "spin_class_id", "created_at", "updated_at", "guests") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["spin_class_id", 17], ["created_at", "2019-06-11 15:19:32.133323"], ["updated_at", "2019-06-11 15:19:32.133323"], ["guests", 2]]
+  ↳ app/controllers/reservations_controller.rb:26
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26
+Redirected to http://localhost:3000/spin_classes/17
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/spin_classes/17" for ::1 at 2019-06-11 11:19:32 -0400
+Processing by SpinClassesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/spin_classes_controller.rb:11
+  Rendering spin_classes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "reservations" ON "users"."id" = "reservations"."user_id" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/views/spin_classes/show.html.erb:5
+  Rendered spin_classes/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:19:33 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 65ms (Views: 59.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:20:09 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-11 11:20:13 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z6cS5RyZmfkR7q0f2KGBemVjI88DkwmqYMtgyEBNqgUj1Bwen0gxPZ2T+r7WPJu4LoQW+nrdjr+OBZEl4i8sDg==", "signin"=>{"email"=>"Jeff@jeff.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Jeff@jeff.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 227ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/users/5" for ::1 at 2019-06-11 11:20:13 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5" for ::1 at 2019-06-11 11:20:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:20:53 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.6ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:25:44 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:27:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-11 11:28:17 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jWkKoNrtBWJX6YtrLTqgw4Jb31hrl/UcFM/KXhbct+5hGgRbWTytptuU3Mojp7oBybzqbRLZcgn6ATuztL4x5Q==", "signin"=>{"email"=>"Jeff@jeff.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Jeff@jeff.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 234ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5" for ::1 at 2019-06-11 11:28:18 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:28:19 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 98ms (Views: 92.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/spin_classes/new" for ::1 at 2019-06-11 11:28:22 -0400
+Processing by SpinClassesController#new as HTML
+  Rendering spin_classes/new.html.erb within layouts/application
+  Rendered spin_classes/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:28:25 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spin_classes/16/reservations/new" for ::1 at 2019-06-11 11:28:39 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"16"}
+  [1m[36mSpinClass Load (0.8ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:28:41 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/spin_classes/16/reservations/new" for ::1 at 2019-06-11 11:28:43 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"16"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/spin_classes/16/reservations" for ::1 at 2019-06-11 11:28:46 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QS1Uoyl6ZSz6B+9pPs23qQHLQHmwV7Ab55Dcr45aBYjmcT8quQXn7/c4cUr98lk4AGw6Mkcd2Rxwdt4NfrAcPQ==", "reservation"=>{"guests"=>"2"}, "commit"=>"Join Class", "spin_class_id"=>"16"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "spin_class_id", "created_at", "updated_at", "guests") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["spin_class_id", 16], ["created_at", "2019-06-11 15:28:46.183413"], ["updated_at", "2019-06-11 15:28:46.183413"], ["guests", 2]]
+  ↳ app/controllers/reservations_controller.rb:26
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26
+Redirected to http://localhost:3000/spin_classes/16
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/spin_classes/16" for ::1 at 2019-06-11 11:28:46 -0400
+Processing by SpinClassesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/spin_classes_controller.rb:11
+  Rendering spin_classes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "reservations" ON "users"."id" = "reservations"."user_id" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/views/spin_classes/show.html.erb:5
+  Rendered spin_classes/show.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:28:48 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spin_classes/15/reservations/new" for ::1 at 2019-06-11 11:28:59 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"15"}
+  [1m[36mSpinClass Load (0.7ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:10
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 51ms (Views: 45.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/spin_classes/15/reservations" for ::1 at 2019-06-11 11:29:02 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UsfQHayttRMs9gt+IcGVj5xL6kx9675fgPH4mMUyOQI6RiTnep11XRkB6iT1LiglpB/OrndoV7P/dL1H48TH8A==", "reservation"=>{"guests"=>"2"}, "commit"=>"Join Class", "spin_class_id"=>"15"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "spin_class_id", "created_at", "updated_at", "guests") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 5], ["spin_class_id", 15], ["created_at", "2019-06-11 15:29:02.780825"], ["updated_at", "2019-06-11 15:29:02.780825"], ["guests", 2]]
+  ↳ app/controllers/reservations_controller.rb:26
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reservations_controller.rb:26
+Redirected to http://localhost:3000/spin_classes/15
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/spin_classes/15" for ::1 at 2019-06-11 11:29:02 -0400
+Processing by SpinClassesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/spin_classes_controller.rb:11
+  Rendering spin_classes/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "reservations" ON "users"."id" = "reservations"."user_id" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/views/spin_classes/show.html.erb:5
+  Rendered spin_classes/show.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:29:05 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 15], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 15]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 16], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 16]]
+  ↳ app/models/spin_class.rb:7
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 5], ["spin_class_id", 17], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "reservations"."guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 17]]
+  ↳ app/models/spin_class.rb:7
+  Rendered spin_classes/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 11:35:41 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MCP23ANCNp112uOvo4bC650SWvtxJ9EGbJ+nKiXXljapWbaSGzBoKapWLuX7NRmz+1PjPj8jtlGr1hJ2zl1v8g=="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:35:41 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signin" for ::1 at 2019-06-11 11:35:45 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9EB8bjE5DLrbq4uQKbSmcKIbY0itxD1VdeQzFgxgH/1tOjwgKUtSDgQnRtpxB30oxFrajePAWgKyrYZK5+rmOQ==", "signin"=>{"email"=>"Jeff@jeff.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "Jeff@jeff.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:5
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 231ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/5" for ::1 at 2019-06-11 11:35:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddStudioIdToUsers (20190611154131)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "studio_id" integer[0m
+  ↳ db/migrate/20190611154131_add_studio_id_to_users.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateUsers (20190609121000)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "studio_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190609121000_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190609121000"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateReservations (20190609121100)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "spin_class_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190609121100_create_reservations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190609121100"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateSpinClasses (20190609121118)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "spin_classes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190609121118_create_spin_classes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190609121118"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateStudios (20190609121125)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "studios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190609121125_create_studios.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190609121125"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-11 15:52:55.338800"], ["updated_at", "2019-06-11 15:52:55.338800"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to RemoveStudioIdFromUsers (20190611155341)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190611155341_remove_studio_id_from_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "studio_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190611155341_remove_studio_id_from_users.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "ausers" ("id","name","email","password_digest","studio_id","created_at","updated_at")
+                     SELECT "id","name","email","password_digest","studio_id","created_at","updated_at" FROM "users"[0m
+  ↳ db/migrate/20190611155341_remove_studio_id_from_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190611155341_remove_studio_id_from_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190611155341_remove_studio_id_from_users.rb:3
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "users" ("id","name","email","password_digest","created_at","updated_at")
+                     SELECT "id","name","email","password_digest","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20190611155341_remove_studio_id_from_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190611155341_remove_studio_id_from_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190611155341"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to AddStudioIdToSpinClasses (20190611155428)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "spin_classes" ADD "studio_id" integer[0m
+  ↳ db/migrate/20190611155428_add_studio_id_to_spin_classes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190611155428"]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ db/seeds.rb:1
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fusion Class:"], ["created_at", "2019-06-11 15:56:13.728899"], ["updated_at", "2019-06-11 15:56:13.728899"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[36mSpinClass Create (0.2ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Spin/Barre:"], ["created_at", "2019-06-11 15:56:13.730999"], ["updated_at", "2019-06-11 15:56:13.730999"]]
+  ↳ db/seeds.rb:3
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:3
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mSpinClass Create (0.2ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "70s music mix:"], ["created_at", "2019-06-11 15:56:13.732635"], ["updated_at", "2019-06-11 15:56:13.732635"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+Started GET "/users/5" for ::1 at 2019-06-11 11:56:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/leilaweiss/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 404 Not Found in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  
+app/controllers/application_controller.rb:6:in `current_user'
+app/controllers/users_controller.rb:11:in `show'
+Started GET "/" for ::1 at 2019-06-11 11:56:39 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  
+app/controllers/application_controller.rb:6:in `current_user'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__327767648345388533_70206732272640'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id", "name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["id", 5], ["name", "Leila"], ["email", "foo@bar.com"], ["password_digest", "$2a$12$R747MY.JPStPB02ldD6ILeiU.Cjvuv7nYkAEVw2F.Q5eSVJd4C4de"], ["created_at", "2019-06-11 15:57:47.574088"], ["updated_at", "2019-06-11 15:57:47.574088"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2019-06-11 11:57:54 -0400
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  Rendered studios/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for ::1 at 2019-06-11 11:58:00 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (18.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2019-06-11 11:58:11 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6BqTmS++BYRwXCMvjt7c+qKgfCy5kRFRKL6x2/93pBZo3sW7//edW095fy97wy2kZmGFj27QuMp31FCu8tRPIA==", "user"=>{"name"=>"Leila Weiss", "email"=>"abc@abc.com", "password"=>"[FILTERED]"}, "commit"=>"Create account!"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Leila Weiss"], ["email", "abc@abc.com"], ["password_digest", "$2a$12$.sz/2tG5rg7mOAczciVoluI2Wjes/ZW7hyJweFqhvraZtqW6UPFqa"], ["created_at", "2019-06-11 15:58:11.650671"], ["updated_at", "2019-06-11 15:58:11.650671"]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:16
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 213ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/6" for ::1 at 2019-06-11 11:58:11 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 41.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spin_classes" for ::1 at 2019-06-11 11:58:13 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT "spin_classes".* FROM "spin_classes"[0m
+  ↳ app/views/spin_classes/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[36mReservation Load (0.7ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 6], ["spin_class_id", 1], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 1]]
+  ↳ app/models/spin_class.rb:8
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 6], ["spin_class_id", 2], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 2]]
+  ↳ app/models/spin_class.rb:8
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT  "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ? AND "reservations"."spin_class_id" = ? LIMIT ?[0m  [["user_id", 6], ["spin_class_id", 3], ["LIMIT", 1]]
+  ↳ app/views/spin_classes/index.html.erb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "guests" FROM "reservations" WHERE "reservations"."spin_class_id" = ?[0m  [["spin_class_id", 3]]
+  ↳ app/models/spin_class.rb:8
+  Rendered spin_classes/index.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 125ms (Views: 104.3ms | ActiveRecord: 4.6ms)
+
+
+Started DELETE "/logout" for ::1 at 2019-06-11 11:58:21 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eXaBiKOH9SXHwRe6Bztwip5HMaUW0SXlUsJbiJn3KTTgDMHGu/WrkRhN2vBfiKvS+AaIYFjVQrKVi+7Ucn3Q8A=="}
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/signin" for ::1 at 2019-06-11 11:58:21 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 45ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+

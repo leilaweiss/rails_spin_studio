@@ -15,11 +15,8 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find_by(user_id: current_user.id, id: params[:id])
   end
 
-
   def create
     @spin_class = SpinClass.find(params[:spin_class_id])
-    # @reservation = Reservation.new(reservation_params)
-    # @reservation.spin_class = @spin_class
     @reservation = @spin_class.reservations.new(reservation_params)
     @reservation.user = current_user
 
