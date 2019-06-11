@@ -14,9 +14,9 @@ class SpinClassesController < ApplicationController
     @spin_class = SpinClass.new(spin_class_params)
 
     if @spin_class.save
-      redirect_to spin_class_reservation_path
+      redirect_to spin_class_path
     else
-      redirect_to spin_classes_path
+      redirect_to new_spin_class_reservation_path
 
     end
   end

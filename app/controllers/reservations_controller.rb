@@ -24,7 +24,7 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
 
     if @reservation.save
-      redirect_to spin_classes_path
+      redirect_to spin_class_path(@spin_class)
     else
       flash.now.alert = "Something went wrong, please try again"
       render new_spin_class_reservation_path(@spin_class)
