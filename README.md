@@ -1,24 +1,16 @@
-# README
+## SpinSpin Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+With SpinSpin, you can browse and sign up for spin classes that are available to you in your area. Only a member once logged can view their account and classes they have. When finished, the user can log out to ensure their account is kept safe.
+```
+### Instructions
+```
+    First, fork and clone this repo
 
-Things you may want to cover:
+    In your terminal, run bundle install, then rake db:migrate and rake db:seed
 
-* Ruby version
+    Fire up your local server, using the rails s command and navigate to localhost:3000
 
-* System dependencies
+    Enjoy!
+    ```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
