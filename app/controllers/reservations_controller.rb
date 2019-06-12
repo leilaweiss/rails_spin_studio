@@ -4,8 +4,7 @@ class ReservationsController < ApplicationController
   before_action :authorize
 
   def index
-    @user = User.find(current_user.id)
-    @reservations = Reservation.user_reservations(current_user)
+    @reservations = current_user.reservations
   end
 
   def new

@@ -15,7 +15,6 @@ class SpinClassesController < ApplicationController
 
   def create
     @spin_class = SpinClass.new(spin_class_params)
-
     if @spin_class.save
       redirect_to spin_classes_path
     else
@@ -28,7 +27,8 @@ private
 
   def spin_class_params
     params.require(:spin_class).permit(
-      :name
+      :name,
+      :studio_id
     )
   end
 end
