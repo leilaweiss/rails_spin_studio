@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :authorize
@@ -12,6 +14,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     return if logged_in? == true
+
     redirect_to signin_path, alert: "You must be logged in to view this page."
   end
 end

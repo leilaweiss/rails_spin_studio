@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SpinClassesController < ApplicationController
   def index
     @studios = Studio.all
@@ -23,8 +25,10 @@ class SpinClassesController < ApplicationController
   end
 
 private
+
   def spin_class_params
     params.require(:spin_class).permit(
-      :name)
+      :name
+    )
   end
 end

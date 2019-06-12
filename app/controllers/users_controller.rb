@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :authorize, only: [:show, :index]
+  before_action :authorize, only: %i[show index]
 
   def index; end
 

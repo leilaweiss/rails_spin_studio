@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ReservationsController < ApplicationController
-    before_action :authorize
+  before_action :authorize
 
   def index
     @user = User.find(current_user.id)
@@ -12,7 +14,10 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find_by(user_id: current_user.id, id: params[:id])
+    @reservation = Reservation.find_by(
+      user_id: current_user.id,
+      id: params[:id]
+    )
   end
 
   def create
@@ -34,7 +39,7 @@ private
     params.require(:reservation).permit(
       :guests,
       :spin_class_id,
-      :user_id)
+      :user_id
+    )
   end
 end
-
