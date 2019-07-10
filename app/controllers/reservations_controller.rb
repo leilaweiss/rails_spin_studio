@@ -7,7 +7,8 @@ class ReservationsController < ApplicationController
     # binding.pry
     @spin_class = SpinClass.find(params[:spin_class_id])
     @reservations = @spin_class.reservations
-    render 'reservations/index', :layout => false
+    render :layout => false
+    # render :json => @reservations
   end
 
   def new
@@ -19,6 +20,7 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.find_by(
       id: params[:id]
     )
+    # render :json => @reservations
   end
 
   def create

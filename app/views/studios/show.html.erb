@@ -4,11 +4,13 @@
 
   <ul>
     <% @studio.spin_classes.each do |spin_class| %>
-        <li><%= spin_class.name %></li>
+        <li><%= link_to spin_class.name %></li>
     <% end %>
   </ul>
     </div>
   </div>
 </div>
+
 <%= link_to('Back', spin_classes_path) %>
+
 
