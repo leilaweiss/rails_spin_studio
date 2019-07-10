@@ -7,6 +7,6 @@ class SpinClass < ApplicationRecord
   validates :name, presence: true
 
   def attendees
-    reservations.pluck(:guests).inject(:+)
+    reservations.sum(:guests)
   end
 end

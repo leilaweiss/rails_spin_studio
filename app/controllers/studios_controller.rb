@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
 class StudiosController < ApplicationController
-  def index; end
+  def index
+    @studios = Studio.all
+  end
+
+  def show
+    @studio = Studio.find(params[:id])
+  end
 end

@@ -2,7 +2,9 @@
 <h4>Click to join a class:</h4>
 <ul class="list-group">
   <% @studios.each do |studio| %>
-  <h4>Spin Classes for Studio <%= studio.name %></h4>
+  <h4>Spin Classes for Studio
+    <%= link_to studio.name, studio_path(studio) %>
+  </h4>
   <% studio.spin_classes.each do |spin_class| %>
     <li class="list-group-item"><%= spin_class.name %>
       <% if Reservation.find_by(user: current_user, spin_class: spin_class).nil? %>

@@ -17,7 +17,7 @@ Requirements:
   (categories- baskets)
 
 - [x] Includes reasonable validations for simple model objects
-- [ ] Includes a class level ActiveRecord scope method
+- [x] Includes a class level ActiveRecord scope method
 - [x] Includes signup (e.g. Devise)
 - [x] Includes login (e.g. Devise)
 - [x] Includes logout (e.g. Devise)

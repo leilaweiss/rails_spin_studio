@@ -1,20 +1,15 @@
-<div class="container">
-  <%= link_to "Back", user_path(current_user), role: "button", class: "btn btn-primary btn-sm" %>
-  <br>
-  <br>
-  <h2><%= current_user.name %>'s Reservations</h2>
-
-  <h4>With Guests</h4>
+<h4>Classes With Guests</h4>
   <ul class="list-group">
     <% @reservations.with_guests.each do |reservation| %>
-      <li class="list-group-item"><%= reservation.spin_class.name %> Guest count: <%= reservation.guests %></li>
+      <li class="list-group-item"><%= reservation.user.name %> Guest count: <%= reservation.guests %></li>
     <% end %>
   </ul>
 
-  <h4>Without Guests</h4>
+  <h4>Classes Without Guests</h4>
   <ul class="list-group">
     <% @reservations.without_guests.each do |reservation| %>
-      <li class="list-group-item"><%= reservation.spin_class.name %></li>
+      <li class="list-group-item"><%= reservation.user.name %></li>
       <% end %>
     </ul>
 </div>
+<%= link_to "Back", user_path(current_user), role: "button", class: "btn btn-primary btn-sm" %>

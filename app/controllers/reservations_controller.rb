@@ -4,7 +4,10 @@ class ReservationsController < ApplicationController
   before_action :authorize
 
   def index
-    @reservations = current_user.reservations
+    # binding.pry
+    @spin_class = SpinClass.find(params[:spin_class_id])
+    @reservations = @spin_class.reservations
+    render 'reservations/index', :layout => false
   end
 
   def new
@@ -13,8 +16,7 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    @reservation = Reservation.find_by(
-      user_id: current_user.id,
+    @reservation = current_user.reservations.find_by(
       id: params[:id]
     )
   end
