@@ -1,29 +1,23 @@
-$(document).ready(function(){
-  $("a.attending_guests").on("click", function(e) {
+$(function() {
+  const $info = $(".attending_guests")
+  $info.on("click", function(e){
     e.preventDefault();
+    $.getJSON(this.href).done(function(response){
+      const reservations = new ReservationFormatter(response)
 
+      reservations.reservationsTemplate()
 
-    // $.ajax({
-    //   method: "GET",
-    //   url: this.href,
-    // }).done(function(response) {
-    //   $("div.guests").html(response)
+      const $ol = $("div.guests")
 
-    // });
-    $.get(this.href).done(function(json) {
-      console.log(json)
-
-      var $ol = $("div.guests ul")
-      $ol.html("")
-
-    json.forEach(function(guest){
-      $ol.append("<li>" + guest.guests + "</li>");
-      })
-
-
+      // response.reservation.forEach(function(guest){
+      //   console.log(response.reservation)
+      //     // $ol.append(reservationEl)
+      // })
     })
   })
-
 })
+
+
+
 
 

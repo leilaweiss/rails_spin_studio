@@ -1,14 +1,17 @@
 # frozen_string_literal: true
-
 class ReservationsController < ApplicationController
   before_action :authorize
 
   def index
-    # binding.pry
     @spin_class = SpinClass.find(params[:spin_class_id])
     @reservations = @spin_class.reservations
-    render :layout => false
-    # render :json => @reservations
+    # binding.pry
+    respond_to do |format|
+      format.html {render :index}
+      format.json do
+        render json: @reservations.to_json(include: :user)
+      end
+    end
   end
 
   def new
