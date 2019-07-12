@@ -28,7 +28,8 @@ private
   def spin_class_params
     params.require(:spin_class).permit(
       :name,
-      :studio_id
+      :studio_id,
+      :instructor
     )
   end
 end
