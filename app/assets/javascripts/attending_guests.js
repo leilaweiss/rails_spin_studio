@@ -6,18 +6,15 @@ $(function() {
       const reservations = new ReservationFormatter(response)
 
       reservations.reservationsTemplate()
-
-      const $ol = $("div.guests")
-
-      // response.reservation.forEach(function(guest){
-      //   console.log(response.reservation)
-      //     // $ol.append(reservationEl)
-      // })
     })
   })
 })
 
 
-
+// $.ajax({
+//   method: "GET",
+//   dataType: "JSON",
+//   url: "/spin_class/45/reservations"
+// })
 
 

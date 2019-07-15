@@ -2,11 +2,15 @@
   <div class="col">
     <h4> <%= @studio.name %></h4>
 
-  <ul>
+  <ol>
     <% @studio.spin_classes.each do |spin_class| %>
-        <li><%= link_to spin_class.name %></li>
+      <li><%= link_to(spin_class.name, spin_class_path(spin_class), class: "spin_class") %></li>
     <% end %>
-  </ul>
+  </ol>
+
+    <div class="spin_class">
+
+    </div>
     </div>
   </div>
 </div>

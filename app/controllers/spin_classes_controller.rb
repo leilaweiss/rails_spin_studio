@@ -11,6 +11,12 @@ class SpinClassesController < ApplicationController
 
   def show
     @spin_class = SpinClass.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: @spin_class.to_json(:only => [ :instructor ])
+      end
+    end
   end
 
   def create
