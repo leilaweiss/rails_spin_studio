@@ -3,6 +3,7 @@
 class SpinClassesController < ApplicationController
   def index
     @studios = Studio.all
+    @spin_class = SpinClass.new
   end
 
   def new

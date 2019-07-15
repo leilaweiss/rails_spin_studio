@@ -7,16 +7,24 @@
   </h4>
   <% studio.spin_classes.each do |spin_class| %>
     <li class="list-group-item"><%= spin_class.name %>
+
       <% if Reservation.find_by(user: current_user, spin_class: spin_class).nil? %>
         <%= link_to "Join", new_spin_class_reservation_path(spin_class) %>
       <% else %>
+
       <h6>Number of Attendees: <%= spin_class.attendees %></h6>
       <h6>Instructor: <%= spin_class.instructor %></h6>
         <h6>You've already joined this spin class!</h6>
       <% end %>
     </li>
-    <% end %>
+      <% end %>
+      <%= form_for (@spin_class) do |f| %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.collection_select :studio_id, Studio.all, :id, :name %>
+        <p><%= f.submit "Create Class", class: "btn btn-primary btn-sm"%></p>
+      <% end %>
   <% end %>
 
 </ul>
-<%= link_to "Add New Spin Class", new_spin_class_path %></br>
+
