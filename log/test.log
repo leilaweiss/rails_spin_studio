@@ -1547,3 +1547,216 @@ Processing by SpinClassesController#create as HTML
   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.6ms)
   [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "spin_class_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["spin_class_id", 4], ["created_at", "2019-07-16 15:56:40.997106"], ["updated_at", "2019-07-16 15:56:40.997106"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Leila"], ["email", "leila@leila.com"], ["password_digest", "$2a$04$tYZ2b2cy0G4UGyzSF8ysbuHtmXqnOoKMHQL0Vx2MWSQw81M9OFk8W"], ["created_at", "2019-07-16 15:56:41.016896"], ["updated_at", "2019-07-16 15:56:41.016896"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Name"], ["created_at", "2019-07-16 15:56:41.099316"], ["updated_at", "2019-07-16 15:56:41.099316"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/spin_classes/1/reservations/new" for 127.0.0.1 at 2019-07-16 11:56:41 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"1"}
+  [1m[36mSpinClass Load (0.2ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 386ms (Views: 374.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes" for 127.0.0.1 at 2019-07-16 11:56:41 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes" for 127.0.0.1 at 2019-07-16 11:56:41 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+Started POST "/spin_classes" for 127.0.0.1 at 2019-07-16 11:56:41 -0400
+Processing by SpinClassesController#create as HTML
+  Parameters: {"utf8"=>"✓", "spin_class"=>{"name"=>"New Spin Class"}, "commit"=>"Create Class"}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New Spin Class"], ["created_at", "2019-07-16 15:56:41.582535"], ["updated_at", "2019-07-16 15:56:41.582535"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes/new" for 127.0.0.1 at 2019-07-16 11:56:41 -0400
+Processing by SpinClassesController#new as HTML
+  Rendering spin_classes/new.html.erb within layouts/application
+  [1m[36mStudio Load (0.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.7ms)
+Started POST "/spin_classes" for 127.0.0.1 at 2019-07-16 11:56:41 -0400
+Processing by SpinClassesController#create as HTML
+  Parameters: {"utf8"=>"✓", "spin_class"=>{"name"=>"New Spin Class"}, "commit"=>"Create Class"}
+  [1m[35m (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New Spin Class"], ["created_at", "2019-07-16 15:56:41.610283"], ["updated_at", "2019-07-16 15:56:41.610283"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReservation Create (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "spin_class_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["spin_class_id", 4], ["created_at", "2019-07-16 15:57:39.796385"], ["updated_at", "2019-07-16 15:57:39.796385"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Leila"], ["email", "leila@leila.com"], ["password_digest", "$2a$04$FTVH5N7Ry4peMX0Mlf1FLOtp63haMX2ShzUA6WN2AMJdRRp4LGgK6"], ["created_at", "2019-07-16 15:57:39.809790"], ["updated_at", "2019-07-16 15:57:39.809790"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Name"], ["created_at", "2019-07-16 15:57:39.868745"], ["updated_at", "2019-07-16 15:57:39.868745"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/spin_classes/1/reservations/new" for 127.0.0.1 at 2019-07-16 11:57:39 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"1"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 382ms (Views: 375.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes" for 127.0.0.1 at 2019-07-16 11:57:40 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mStudio Load (0.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes" for 127.0.0.1 at 2019-07-16 11:57:40 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms)
+Started POST "/spin_classes" for 127.0.0.1 at 2019-07-16 11:57:40 -0400
+Processing by SpinClassesController#create as HTML
+  Parameters: {"utf8"=>"✓", "spin_class"=>{"name"=>"New Spin Class"}, "commit"=>"Create Class"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New Spin Class"], ["created_at", "2019-07-16 15:57:40.330508"], ["updated_at", "2019-07-16 15:57:40.330508"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes/new" for 127.0.0.1 at 2019-07-16 11:57:40 -0400
+Processing by SpinClassesController#new as HTML
+  Rendering spin_classes/new.html.erb within layouts/application
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+Started POST "/spin_classes" for 127.0.0.1 at 2019-07-16 11:57:40 -0400
+Processing by SpinClassesController#create as HTML
+  Parameters: {"utf8"=>"✓", "spin_class"=>{"name"=>"New Spin Class"}, "commit"=>"Create Class"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.4ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New Spin Class"], ["created_at", "2019-07-16 15:57:40.355059"], ["updated_at", "2019-07-16 15:57:40.355059"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mReservation Create (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("user_id", "spin_class_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 3], ["spin_class_id", 4], ["created_at", "2019-07-16 15:58:30.762119"], ["updated_at", "2019-07-16 15:58:30.762119"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Leila"], ["email", "leila@leila.com"], ["password_digest", "$2a$04$TU2DeAQrH5k.0Hg8dl7Ma.4OioHN5FHBP2JLeyE7RiHW7hhCclQ6."], ["created_at", "2019-07-16 15:58:30.775608"], ["updated_at", "2019-07-16 15:58:30.775608"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Name"], ["created_at", "2019-07-16 15:58:30.835899"], ["updated_at", "2019-07-16 15:58:30.835899"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/spin_classes/1/reservations/new" for 127.0.0.1 at 2019-07-16 11:58:30 -0400
+Processing by ReservationsController#new as HTML
+  Parameters: {"spin_class_id"=>"1"}
+  [1m[36mSpinClass Load (0.1ms)[0m  [1m[34mSELECT  "spin_classes".* FROM "spin_classes" WHERE "spin_classes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reservations/new.html.erb within layouts/application
+  Rendered reservations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 423ms (Views: 415.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes" for 127.0.0.1 at 2019-07-16 11:58:31 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mStudio Load (0.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes" for 127.0.0.1 at 2019-07-16 11:58:31 -0400
+Processing by SpinClassesController#index as HTML
+  Rendering spin_classes/index.html.erb within layouts/application
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+Started POST "/spin_classes" for 127.0.0.1 at 2019-07-16 11:58:31 -0400
+Processing by SpinClassesController#create as HTML
+  Parameters: {"utf8"=>"✓", "spin_class"=>{"name"=>"New Spin Class"}, "commit"=>"Create Class"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New Spin Class"], ["created_at", "2019-07-16 15:58:31.314596"], ["updated_at", "2019-07-16 15:58:31.314596"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+Started GET "/spin_classes/new" for 127.0.0.1 at 2019-07-16 11:58:31 -0400
+Processing by SpinClassesController#new as HTML
+  Rendering spin_classes/new.html.erb within layouts/application
+  [1m[36mStudio Load (0.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered spin_classes/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+Started POST "/spin_classes" for 127.0.0.1 at 2019-07-16 11:58:31 -0400
+Processing by SpinClassesController#create as HTML
+  Parameters: {"utf8"=>"✓", "spin_class"=>{"name"=>"New Spin Class"}, "commit"=>"Create Class"}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSpinClass Create (0.3ms)[0m  [1m[32mINSERT INTO "spin_classes" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New Spin Class"], ["created_at", "2019-07-16 15:58:31.342697"], ["updated_at", "2019-07-16 15:58:31.342697"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+  [1m[35m (1.1ms)[0m  [1m[31mrollback transaction[0m
