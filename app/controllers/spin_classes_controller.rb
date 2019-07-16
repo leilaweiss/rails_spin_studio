@@ -4,6 +4,7 @@ class SpinClassesController < ApplicationController
   def index
     @studios = Studio.all
     @spin_class = SpinClass.new
+
   end
 
   def new
@@ -23,9 +24,9 @@ class SpinClassesController < ApplicationController
   def create
     @spin_class = SpinClass.new(spin_class_params)
     if @spin_class.save
-      redirect_to spin_classes_path
+      render json: @spin_class.to_json
     else
-      redirect_to new_spin_class_reservation_path
+
 
     end
   end

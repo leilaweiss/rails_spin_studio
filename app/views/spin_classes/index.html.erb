@@ -5,6 +5,7 @@
   <h4>Spin Classes for Studio
     <%= link_to studio.name, studio_path(studio) %>
   </h4>
+  <ul id="studio_<%= studio.id %>_spin_classes">
   <% studio.spin_classes.each do |spin_class| %>
     <li class="list-group-item"><%= spin_class.name %>
 
@@ -18,12 +19,15 @@
       <% end %>
     </li>
       <% end %>
+    </ul>
+
+      <% end %>
+
       <%= form_for (@spin_class) do |f| %>
           <%= f.label :name %>
           <%= f.text_field :name %>
           <%= f.collection_select :studio_id, Studio.all, :id, :name %>
         <p><%= f.submit "Create Class", class: "btn btn-primary btn-sm"%></p>
-      <% end %>
   <% end %>
 
 </ul>
