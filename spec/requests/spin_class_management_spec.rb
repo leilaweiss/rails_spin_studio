@@ -3,8 +3,14 @@ require "rails_helper"
 RSpec.describe "Spin Class Join", :type => :request do
 
   it "joins a Spin class and redirects to Reservations New Page" do
-    get "/spin_classes/:spin_class_id/reservations/new"
+    spin_class = create(:spin_class)
+
+    stub_authorize
+
+    get "/spin_classes/#{spin_class.id}/reservations/new"
     expect(response).to render_template(:show)
+
+    stub_authorize
 
     post "/spin_class/reservations", :params => { :reservation => {:guests => "Guests"} }
 
@@ -15,7 +21,7 @@ RSpec.describe "Spin Class Join", :type => :request do
   end
 
   it "does not render a different template" do
-    get "/spin_classes/:spin_class_id/reservations/new"
+    get "/spin_classes/#{spin_class.id}/reservations/new"
     expect(response).to_not render_template(:show)
   end
 end
