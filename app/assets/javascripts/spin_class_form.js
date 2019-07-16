@@ -9,7 +9,9 @@ $('#new_spin_class').on("submit", function(e){
       data: $(this).serialize(),
       dataType: "JSON"
     }).done(function(response){
-      debugger
+      const newClass = new SpinClass(response)
+      newClass.addToPage()
+      $("#spin_class_name").val("")
 
     })
 

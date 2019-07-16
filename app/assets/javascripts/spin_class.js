@@ -8,6 +8,10 @@ class SpinClass {
 
   }
 
+  addToPage() {
+    $(`#studio_${this.studioId}_spin_classes`).append(this.toHtml())
+  }
+
   toHtml() {
     return `
     <li class="list-group-item">${this.name}
