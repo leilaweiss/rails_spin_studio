@@ -10,6 +10,7 @@ RSpec.describe "Spin Class System Spec", :type => :system do
 
     fill_in "Name", :with => "New Spin Class"
     click_button "Create Class"
+     expect(page).to have_text("New Spin Class")
 
   end
 end

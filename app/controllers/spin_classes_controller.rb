@@ -25,9 +25,6 @@ class SpinClassesController < ApplicationController
     @spin_class = SpinClass.new(spin_class_params)
     if @spin_class.save
       render json: @spin_class.to_json
-    else
-
-
     end
   end
 
