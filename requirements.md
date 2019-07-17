@@ -1,37 +1,18 @@
-# Specifications for the Rails Assessment
+# Specifications for the Rails with jQuery Assessment
 
-Add notes below each checkbox with how your application has met the requirement
+Specs:
+- [x] Uses jQuery for implementing new requirements
+- [x] Includes a single resource rendered using jQuery, a JSON backend and OO JS.
+- [x] Includes a list of resources rendered using jQuery, a JSON backend and OO JS.
+- [x] Intercepts a form to create a resource and then renders the response to the DOM without a page refresh.
+- [x] Includes at least one has_many relationship in information rendered via JSON and appended to the DOM (likely included as part of one of the above criteria).
+- [x] Translates all JSON responses into JS model objects.
+- [x] Contains at least 4 model specs, 2 request specs and one system test that reasonably tests your public api.
 
-Requirements:
-- [x] Uses Ruby on Rails
-- [x] Includes at least one has_many relationship (e.g. User has_many Recipes)
-  (venue has many games)
-
-- [x] Includes at least one belongs_to relationship (e.g. Post belongs_to User)
-  (game belongs to a venue)
-
-- [x] Includes at least one has_many through relationship (e.g. Recipe has_many Items through Ingredients)
-  (game has_many :players, through: :baskets)
-
-- [x] The "through" part of the has_many through includes at least one user submittable attribute (e.g. ingredient#quantity)
-  (categories- baskets)
-
-- [x] Includes reasonable validations for simple model objects
-- [x] Includes a class level ActiveRecord scope method
-- [x] Includes signup (e.g. Devise)
-- [x] Includes login (e.g. Devise)
-- [x] Includes logout (e.g. Devise)
-- [x] Includes nested resource show or index (e.g. users/2/recipes)
-- [x] Includes nested resource "new" form (recipes/1/ingredients/new)
-- [x] Includes form display of validation errors
-- [x] Includes Unit tests for at least 2 of your models
-- [x] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
-- [x] Includes a `README.md` with an application description and installation guide
-
-Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
-
-If you've added any additional functionality to your application that you'd like to demonstrate, please describe it below:
+Confirm
+- [ ] You have a large number of small Git commits
+- [ ] Your commit messages are meaningful
+- [ ] You made the changes in a commit that relate to the commit message
+- [ ] You don't include changes in a commit that aren't related to the commit message
+- [ ] Makes use of ES6 features as much as possible (e.g Arrow functions, Let & Const, Class, constructor functions)
+- [ ] Application is pretty DRY.

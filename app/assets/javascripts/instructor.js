@@ -5,7 +5,7 @@ class Instructor {
 
   instructorEl() {
     return `
-      <h2>${this.name}</h2>
+      <h4>${this.name}</h4>
     `
   }
 }
